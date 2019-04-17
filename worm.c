@@ -16,7 +16,7 @@
 #define WALL_LEN_LV1 	50
 #define WALL_LEN_LV2 	140
 #define WALL_LEN_LV3	240
-#define WORM_SPEED 	100000
+#define WORM_SPEED 	150000
 #define BOUND_BOTTOM 	35					
 #define BOUND_RIGHT	100					
 #define BOUND_LEFT	0
@@ -466,6 +466,7 @@ int main()
 			WormInit(worm, n, cur_dir, 50, 3);					//initalize a new worm
 			DrawWalls(1, wall1, WALL_LEN_LV1);
 			DrawWalls(2, wall2, WALL_LEN_LV2);
+			GenerateFood(level, &food);						//generate one more food upon entry of a new stage
 			temp = true;								//this block is run only once
 		}
 		if(level == 2)
@@ -479,6 +480,7 @@ int main()
 			DrawWalls(1, wall1, WALL_LEN_LV1);
 			DrawWalls(2, wall2, WALL_LEN_LV2);
 			DrawWalls(3, wall3, WALL_LEN_LV3);
+			GenerateFood(level, &food);						//generate one more food upon entry of a new stage
 			temp = false;								//this block is run only once
 		}
 		if(level == 3)
